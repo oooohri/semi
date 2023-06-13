@@ -5,7 +5,6 @@ import java.util.Date;
 public class Board {
 
 	private int no;
-	private String authority;
 	private String category;
 	private String title;
 	private String content;
@@ -19,6 +18,10 @@ public class Board {
 	private String type;
 	
 	public Board() {}
+	
+	public Board(int no) {
+		this.no = no;
+	}
 	
 	public User getUser() {
 		return user;
@@ -38,14 +41,6 @@ public class Board {
 
 	public void setNo(int no) {
 		this.no = no;
-	}
-
-	public String getAuthority() {
-		return authority;
-	}
-
-	public void setAuthority(String authority) {
-		this.authority = authority;
 	}
 
 	public String getCategory() {

@@ -8,11 +8,11 @@ public class Membership {
 	private String name;
 	private String description;
 	private int price;
-	private int discountedRate;
+	private double discountedRate;
 	private int numOfUseDay;
 	private int numOfUseWeek;
 	private int numOfPause;
-	private int duration;
+	private String duration;
 	private int count;
 	private Gym gym;
 	
@@ -24,22 +24,6 @@ public class Membership {
 
 	public void setNo(int no) {
 		this.no = no;
-	}
-
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
 	}
 
 	public String getCat() {
@@ -82,11 +66,11 @@ public class Membership {
 		this.price = price;
 	}
 
-	public int getDiscountedRate() {
+	public double getDiscountedRate() {
 		return discountedRate;
 	}
 
-	public void setDiscountedRate(int discountedRate) {
+	public void setDiscountedRate(double discountedRate) {
 		this.discountedRate = discountedRate;
 	}
 
@@ -114,6 +98,22 @@ public class Membership {
 		this.numOfPause = numOfPause;
 	}
 
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	public Gym getGym() {
 		return gym;
 	}
@@ -121,6 +121,9 @@ public class Membership {
 	public void setGym(Gym gym) {
 		this.gym = gym;
 	}
-	
+
+	public int getDiscountedPrice() {
+		return (int)((1 - getDiscountedRate())*getPrice());
+	}
 	
 }
